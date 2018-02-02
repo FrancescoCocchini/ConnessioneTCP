@@ -9,17 +9,19 @@ package provagit;
  *
  * @author franc
  */
-public class ProvaGit {
+public class ProvaGit2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         try{
-            Server sv = new Server(2222);
-            sv.ascolta();
+            Client cl = new Client(2222);
+            cl.connetti("Ciao!");
+            String risp = cl.risposta();
+            System.out.println("Il server risponde: " + risp);
         }catch(Exception e){
-            System.err.println(e.getLocalizedMessage());
+            System.err.println(e.getMessage());
         }
     }
     
